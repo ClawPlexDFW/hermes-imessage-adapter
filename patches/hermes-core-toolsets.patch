@@ -1,0 +1,30 @@
+--- a/toolsets.py
++++ b/toolsets.py
+@@ -482,6 +482,18 @@
+         "includes": []
+     },
+ 
++    "hermes-imsg": {
++        # iMessage bot toolset - native macOS Messages.app via the `imsg`
++        # CLI subprocess. Uses core tools (full access: terminal, browser,
++        # file, vision, computer_use, etc.) plus the imsg-tools plugin
++        # exposes imsg_react / imsg_send_file for the agent to call.
++        "description": "iMessage bot toolset - Apple iMessage via local `imsg` CLI (full access)",
++        "tools": _HERMES_CORE_TOOLS + [
++            "imsg_react",
++            "imsg_send_file",
++        ],
++        "includes": []
++    },
+ 
+     "hermes-homeassistant": {
+         "description": "Home Assistant bot toolset - smart home event monitoring and control",
+@@ -577,7 +589,7 @@
+     "hermes-gateway": {
+         "description": "Gateway toolset - union of all messaging platform tools",
+         "tools": [],
+-        "includes": ["hermes-telegram", "hermes-discord", "hermes-whatsapp", "hermes-slack", "hermes-signal", "hermes-bluebubbles", "hermes-homeassistant", "hermes-email", "hermes-sms", "hermes-mattermost", "hermes-matrix", "hermes-dingtalk", "hermes-feishu", "hermes-wecom", "hermes-wecom-callback", "hermes-weixin", "hermes-qqbot", "hermes-webhook", "hermes-yuanbao"]
++        "includes": ["hermes-telegram", "hermes-discord", "hermes-whatsapp", "hermes-slack", "hermes-signal", "hermes-bluebubbles", "hermes-imsg", "hermes-homeassistant", "hermes-email", "hermes-sms", "hermes-mattermost", "hermes-matrix", "hermes-dingtalk", "hermes-feishu", "hermes-wecom", "hermes-wecom-callback", "hermes-weixin", "hermes-qqbot", "hermes-webhook", "hermes-yuanbao"]
+     }
+ }
+ 

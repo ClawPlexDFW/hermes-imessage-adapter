@@ -1,0 +1,8 @@
+name: imsg-tools
+version: 0.1.0
+description: "Agent-callable tools for the iMessage platform (send reactions, send files). Backed by the `imsg` CLI subprocess; the platform adapter itself handles inbound messages and basic send."
+author: ClawPlexDFW
+kind: standalone
+provides_tools:
+  - imsg_react
+  - imsg_send_file
